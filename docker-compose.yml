@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    image: uvicorn-fastapi
+    ports:
+      - 5500:5000
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    ports:
+      - 55000:6379
+
